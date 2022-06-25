@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __invoke(Request $request)
+    {
+        $product = Product::all();
+        return view('home', compact('product'));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +49,7 @@ class ProductController extends Controller
         ]);
 
         $product = Product::create($storeData);
-        return redirect('/home')->with('completed', 'Products have been saved');
+        return redirect('/products')->with('completed', 'Products have been saved');
     }
 
     /**
@@ -101,7 +106,7 @@ class ProductController extends Controller
     {
         $product = Product::findorFail($id);
         $product->delete();
-        return redirect('/products')->with('completed','Product has been deleted');
+        return redirect('/destroy')->with('completed','Product has been deleted');
 
     }
 }

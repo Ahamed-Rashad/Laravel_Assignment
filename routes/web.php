@@ -20,16 +20,19 @@ use App\Http\Controllers\ProductController;
 Route::get('register', [RegisterController::class, 'register']);
 Route::post('register', [RegisterController::class, 'store'])->name('register');
 Route::get('login', [LoginController::class, 'login']);
-Route::get('home', [LoginController::class, 'home'])->name('home');
+Route::get('products', [LoginController::class, 'products'])->name('products');
 Route::post('login', [LoginController::class, 'store'])->name('login');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('forget-password', [ForgotPasswordController::class, 'getEmail']);
 Route::post('forget-password', [ForgotPasswordController::class, 'postEmail']);
 Route::get('reset-password/{token}', [ResetPasswordController::class, 'getPassword']);
 Route::post('reset-password', [ResetPasswordController::class, 'updatePassword']);
-
+//Route::get('/login',)
 Route::resource('products', ProductController::class);
-
+// Route::get('products/edit', 'ProductController@edit')->name('edit');
+// Route::get('products/destroy', 'ProductController@destroy')->name('destroy');
+//Route::get('edit', ProductController::class);
+//Route::get('/', ProductController::class);
 // Route::get('/', function () {
 //     return view('welcome');
 // });

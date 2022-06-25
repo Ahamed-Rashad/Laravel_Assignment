@@ -30,10 +30,10 @@
                         </div>
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="text" class="form-control" name="price" value="{{ $procuct->price }}"/>
+                            <input type="text" class="form-control" name="price" value="{{ $product->price }}"/>
                         </div>
                         <div class="form-group">
-                            <select for="password" name="status" value="{{ $procuct->status }}">
+                            <select for="password" name="status" value="{{ $product->status }}">
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
                             </select>

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -30,7 +31,7 @@
                             <td>{{$products->status}}</td>
                             <td class="text-center">
                                 <a href="{{ route('products.edit', $products->id)}}" class="btn btn-primary btn-sm">Update</a>
-                                <form action="{{ route('products.destory', $products->id)}}" method="post" style="display:inline-block">
+                                <form action="{{ route('products.destroy', $products->id)}}" method="post" style="display:inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm" type="submit">Delete</button>
@@ -40,6 +41,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                <a href="{{ route('products.create')}}" class="btn btn-success btn-sm">Create</a>
             </div>
         </div>
     </div>
